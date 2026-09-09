@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Datenschutz | NEXORA Digital Studio</title>
+
+  <meta
+    name="description"
+    content="Datenschutzerklärung von NEXORA Digital Studio."
+  >
+
+  <style>
+    :root {
+      --green-dark: #0d5b36;
+      --green: #1a8f52;
+      --green-light: #7ac142;
+      --grey: #f4f7f5;
+      --text: #1c2b22;
+      --white: #ffffff;
+      --border: #e2e8e4;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--grey);
+    }
+
+    header {
+      background: var(--green-dark);
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--green-light);
+    }
+
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    .lang-switch button.active {
+      background: white;
+      color: var(--green-dark);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .legal-card {
+      background: white;
+      padding: 45px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      color: var(--green-dark);
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 1.25rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 11px 22px;
+      border-radius: 25px;
+      background: var(--green);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #68736d;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .legal-card {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      NEXORA <span>Digital Studio</span>
+    </div>
+
+    <div class="lang-switch">
+      <button id="btn-de" class="active" onclick="setLang('de')">
+        DE
+      </button>
+
+      <button id="btn-hu" onclick="setLang('hu')">
+        HU
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <div class="legal-card">
+
+    <h1
+      data-de="Datenschutzerklärung"
+      data-hu="Adatvédelmi tájékoztató"
+    >
+      Datenschutzerklärung
+    </h1>
+
+    <h2
+      data-de="1. Verantwortlicher"
+      data-hu="1. Adatkezelő"
+    >
+      1. Verantwortlicher
+    </h2>
+
+    <p>
+      NEXORA Digital Studio<br>
+      Andrea Rostas<br>
+      <span style="color:#b00020;font-weight:700;">
+        <!-- [STRASSE UND HAUSNUMMER ERGÄNZEN] -->
+      </span>
+      8600 Siófok<br>
+      Ungarn
+    </p>
+
+    <p>
+      <!-- E-Mail: -->
+      <span style="color:#b00020;font-weight:700;">
+        <!-- [E-MAIL-ADRESSE ERGÄNZEN] -->
+      </span>
+    </p>
+
+    <h2
+      data-de="2. Allgemeine Hinweise"
+      data-hu="2. Általános tájékoztatás"
+    >
+      2. Allgemeine Hinweise
+    </h2>
+
+    <p
+      data-de="Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden nur im Rahmen der geltenden gesetzlichen Vorschriften verarbeitet."
+      data-hu="Személyes adatainak védelme fontos számunkra. A személyes adatokat kizárólag a hatályos jogszabályoknak megfelelően kezeljük."
+    >
+      Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden nur im Rahmen der geltenden gesetzlichen Vorschriften verarbeitet.
+    </p>
+
+    <h2
+      data-de="3. Hosting durch Vercel"
+      data-hu="3. Tárhelyszolgáltatás a Vercelnél"
+    >
+      3. Hosting durch Vercel
+    </h2>
+
+    <p
+      data-de="Diese Website wird über Vercel gehostet. Beim Aufruf der Website können technisch erforderliche Daten verarbeitet werden, die für die Bereitstellung, Sicherheit und Stabilität der Website erforderlich sind."
+      data-hu="A weboldal tárhelyszolgáltatását a Vercel biztosítja. A weboldal megnyitásakor technikailag szükséges adatok kezelhetők, amelyek a weboldal biztosításához, biztonságához és stabil működéséhez szükségesek."
+    >
+      Diese Website wird über Vercel gehostet. Beim Aufruf der Website können technisch erforderliche Daten verarbeitet werden, die für die Bereitstellung, Sicherheit und Stabilität der Website erforderlich sind.
+    </p>
+
+    <p>
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
+        Vercel
+      </a>
+    </p>
+
+    <h2
+      data-de="4. Kontaktaufnahme über WhatsApp"
+      data-hu="4. Kapcsolatfelvétel WhatsAppon keresztül"
+    >
+      4. Kontaktaufnahme über WhatsApp
+    </h2>
+
+    <p
+      data-de="Auf dieser Website wird eine Möglichkeit zur Kontaktaufnahme über WhatsApp angeboten. Wenn Sie WhatsApp verwenden, werden Sie zu WhatsApp weitergeleitet. Für die anschließende Verarbeitung personenbezogener Daten gelten die Datenschutzbestimmungen des jeweiligen Anbieters."
+      data-hu="A weboldalon lehetőség van WhatsAppon keresztüli kapcsolatfelvételre. A WhatsApp használata esetén a rendszer átirányítja Önt a WhatsApp szolgáltatásba. A további adatkezelésre az adott szolgáltató adatvédelmi szabályzata vonatkozik."
+    >
+      Auf dieser Website wird eine Möglichkeit zur Kontaktaufnahme über WhatsApp angeboten. Wenn Sie WhatsApp verwenden, werden Sie zu WhatsApp weitergeleitet. Für die anschließende Verarbeitung personenbezogener Daten gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
+    </p>
+
+    <h2
+      data-de="5. Kontaktaufnahme per SMS"
+      data-hu="5. Kapcsolatfelvétel SMS-ben"
+    >
+      5. Kontaktaufnahme per SMS
+    </h2>
+
+    <p
+      data-de="Auf dieser Website besteht außerdem die Möglichkeit, per SMS Kontakt aufzunehmen. Wenn Sie eine SMS senden, werden die von Ihnen übermittelten Angaben zur Bearbeitung Ihrer Anfrage verwendet."
+      data-hu="A weboldalon SMS-ben is fel lehet venni velünk a kapcsolatot. SMS küldése esetén az Ön által megadott adatokat megkeresésének feldolgozásához használjuk fel."
+    >
+      Auf dieser Website besteht außerdem die Möglichkeit, per SMS Kontakt aufzunehmen. Wenn Sie eine SMS senden, werden die von Ihnen übermittelten Angaben zur Bearbeitung Ihrer Anfrage verwendet.
+    </p>
+
+    <h2
+      data-de="6. Welche Daten können verarbeitet werden?"
+      data-hu="6. Milyen adatok kezelhetők?"
+    >
+      6. Welche Daten können verarbeitet werden?
+    </h2>
+
+    <p
+      data-de="Je nach Art der Kontaktaufnahme können insbesondere Name, Telefonnummer, E-Mail-Adresse und die von Ihnen freiwillig mitgeteilten Informationen verarbeitet werden."
+      data-hu="A kapcsolatfelvétel módjától függően különösen a név, telefonszám, e-mail-cím és az Ön által önkéntesen megadott egyéb információk kezelhetők."
+    >
+      Je nach Art der Kontaktaufnahme können insbesondere Name, Telefonnummer, E-Mail-Adresse und die von Ihnen freiwillig mitgeteilten Informationen verarbeitet werden.
+    </p>
+
+    <h2
+      data-de="7. Keine Analyse- und Trackingdienste"
+      data-hu="7. Elemző- és nyomkövető szolgáltatások"
+    >
+      7. Keine Analyse- und Trackingdienste
+    </h2>
+
+    <p
+      data-de="Nach aktuellem Stand werden auf dieser Website keine eigenen Analyse- oder Trackingdienste wie Google Analytics eingesetzt."
+      data-hu="Jelenlegi állapot szerint a weboldal nem használ saját elemző- vagy nyomkövető szolgáltatásokat, például Google Analytics rendszert."
+    >
+      Nach aktuellem Stand werden auf dieser Website keine eigenen Analyse- oder Trackingdienste wie Google Analytics eingesetzt.
+    </p>
+
+    <h2
+      data-de="8. Ihre Rechte"
+      data-hu="8. Az Ön jogai"
+    >
+      8. Ihre Rechte
+    </h2>
+
+    <p
+      data-de="Sie haben im Rahmen der geltenden Datenschutzgesetze insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und gegebenenfalls Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten."
+      data-hu="A hatályos adatvédelmi jogszabályok alapján Önt különösen a hozzáféréshez, helyesbítéshez, törléshez, az adatkezelés korlátozásához, valamint adott esetben a személyes adatok kezelése elleni tiltakozáshoz való jog illeti meg."
+    >
+      Sie haben im Rahmen der geltenden Datenschutzgesetze insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und gegebenenfalls Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
+    </p>
+
+    <h2
+      data-de="9. Aktualisierung"
+      data-hu="9. Frissítés"
+    >
+      9. Aktualisierung
+    </h2>
+
+    <p
+      data-de="Diese Datenschutzerklärung kann angepasst werden, wenn sich die technischen Funktionen der Website oder die verwendeten Dienste ändern."
+      data-hu="Ez az adatvédelmi tájékoztató módosítható, ha a weboldal technikai funkciói vagy az alkalmazott szolgáltatások megváltoznak."
+    >
+      Diese Datenschutzerklärung kann angepasst werden, wenn sich die technischen Funktionen der Website oder die verwendeten Dienste ändern.
+    </p>
+
+    <p style="margin-top:30px;font-size:0.9rem;color:#777;">
+      Stand: September 2026
+    </p>
+
+    <a
+      href="/"
+      class="back"
+      data-de="← Zurück zur Website"
+      data-hu="← Vissza a weboldalra"
+    >
+      ← Zurück zur Website
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 NEXORA Digital Studio
+</footer>
+
+<script>
+  function setLang(lang) {
+
+    document
+      .querySelectorAll("[data-de]")
+      .forEach(function(el) {
+        el.innerHTML = el.getAttribute("data-" + lang);
+      });
+
+    document
+      .getElementById("btn-de")
+      .classList
+      .toggle("active", lang === "de");
+
+    document
+      .getElementById("btn-hu")
+      .classList
+      .toggle("active", lang === "hu");
+
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>

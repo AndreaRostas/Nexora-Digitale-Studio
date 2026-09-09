@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NEXORA Digital Studio | Professionelle Webseiten – AT · CH · HU</title>
@@ -18,7 +21,10 @@
 
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://nexora-digital.studio/">
+  <link
+    rel="canonical"
+    href="https://nexora-digital.studio/"
+  >
 
   <meta
     property="og:title"
@@ -35,6 +41,7 @@
   <link rel="icon" href="data:,">
 
   <style>
+
     :root {
       --green-dark: #0d5b36;
       --green: #1a8f52;
@@ -148,6 +155,7 @@
         var(--green-dark),
         var(--green)
       );
+
       color: #fff;
       padding: 100px 0 85px;
       text-align: center;
@@ -339,7 +347,7 @@
     }
 
     .portfolio-image {
-      height: 190px;
+      height: 230px;
       background: linear-gradient(
         135deg,
         #dcefe3,
@@ -348,25 +356,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--green-dark);
-      font-size: 1rem;
-      font-weight: 700;
       position: relative;
       overflow: hidden;
     }
 
-    .portfolio-image::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 35px solid rgba(26, 143, 82, 0.08);
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
     }
 
-    .portfolio-image span {
-      opacity: 0.75;
-      z-index: 1;
+    .portfolio-card:hover .portfolio-image img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-placeholder {
+      color: var(--green-dark);
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 20px;
     }
 
     .portfolio-content {
@@ -406,6 +417,95 @@
     .portfolio-link:hover {
       background: var(--green);
       color: #fff;
+    }
+
+    /* =========================
+       REVIEWS
+    ========================= */
+
+    .reviews {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review-card {
+      background: var(--grey);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: 0.25s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .review-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        var(--green-dark),
+        var(--green-light)
+      );
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .review-label {
+      font-size: 0.72rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .review-stars {
+      color: #f5b301;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .review-text {
+      color: #5f6963;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .review-demo {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #e5efe8;
+      color: var(--green-dark);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
     }
 
     /* =========================
@@ -700,7 +800,18 @@
        MOBILE
     ========================= */
 
+    @media (max-width: 900px) {
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+    }
+
     @media (max-width: 700px) {
+
       header .container {
         align-items: flex-start;
       }
@@ -756,1112 +867,1397 @@
       }
 
       .portfolio-image {
-        height: 170px;
+        height: 190px;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
 
-  <header>
-    <div class="container">
+<!-- =========================
+     HEADER
+========================= -->
 
-      <div class="logo">
-        <div class="name">
-          NEXORA <span>Digital Studio</span>
-        </div>
+<header>
 
-        <div
-          class="tagline"
-          data-de="Wir gestalten Ihren digitalen Auftritt."
-          data-hu="Megalkotjuk digitális megjelenését."
-        >
-          Wir gestalten Ihren digitalen Auftritt.
-        </div>
+  <div class="container">
+
+    <div class="logo">
+
+      <div class="name">
+        NEXORA <span>Digital Studio</span>
       </div>
-
-      <div class="lang-switch">
-        <button
-          id="btn-de"
-          class="active"
-          onclick="setLang('de')"
-        >
-          DE
-        </button>
-
-        <button
-          id="btn-hu"
-          onclick="setLang('hu')"
-        >
-          HU
-        </button>
-      </div>
-
-    </div>
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero">
-    <div class="container">
-
-      <div class="brand-tag">
-        NEXORA DIGITAL STUDIO
-      </div>
-
-      <h1
-        data-de="Ihre professionelle <span>Website.</span><br>Modern. Schnell. Erfolgsorientiert."
-        data-hu="Professzionális <span>weboldal.</span><br>Modern. Gyors. Hatékony."
-      >
-        Ihre professionelle <span>Website.</span><br>
-        Modern. Schnell. Erfolgsorientiert.
-      </h1>
-
-      <p
-        data-de="Wir erstellen moderne, responsive Webseiten für Selbstständige und Unternehmen – individuell gestaltet und passend zu Ihrer Marke."
-        data-hu="Modern, reszponzív weboldalakat készítünk vállalkozók és cégek számára – egyedi megjelenéssel és az Ön márkájához igazítva."
-      >
-        Wir erstellen moderne, responsive Webseiten für Selbstständige und Unternehmen – individuell gestaltet und passend zu Ihrer Marke.
-      </p>
-
-      <a
-        href="#kontakt"
-        class="cta-btn"
-        data-de="Kostenloses Angebot anfragen →"
-        data-hu="Ingyenes ajánlat kérése →"
-      >
-        Kostenloses Angebot anfragen →
-      </a>
 
       <div
-        class="hero-note"
-        data-de="Österreich · Schweiz · Ungarn"
-        data-hu="Ausztria · Svájc · Magyarország"
-      >
-        Österreich · Schweiz · Ungarn
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- =========================
-       WHY NEXORA
-  ========================= -->
-
-  <section class="features">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="Warum NEXORA?"
-        data-hu="Miért a NEXORA?"
-      >
-        Warum NEXORA?
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-de="Wir verbinden modernes Design mit einer klaren Benutzererfahrung."
-        data-hu="A modern dizájnt átlátható és felhasználóbarát megoldásokkal ötvözzük."
-      >
-        Wir verbinden modernes Design mit einer klaren Benutzererfahrung.
-      </p>
-
-      <div class="feature-grid">
-
-        <div class="feature-card">
-          <div class="icon">🖥️</div>
-
-          <h3
-            data-de="Modernes Design"
-            data-hu="Modern design"
-          >
-            Modernes Design
-          </h3>
-
-          <p
-            data-de="Individuell und professionell"
-            data-hu="Egyedi és professzionális"
-          >
-            Individuell und professionell
-          </p>
-        </div>
-
-
-        <div class="feature-card">
-          <div class="icon">📱</div>
-
-          <h3
-            data-de="Mobil optimiert"
-            data-hu="Mobilbarát"
-          >
-            Mobil optimiert
-          </h3>
-
-          <p
-            data-de="Perfekt auf Smartphone, Tablet und Desktop"
-            data-hu="Tökéletes telefonon, tableten és számítógépen"
-          >
-            Perfekt auf Smartphone, Tablet und Desktop
-          </p>
-        </div>
-
-
-        <div class="feature-card">
-          <div class="icon">🔍</div>
-
-          <h3
-            data-de="SEO-freundlich"
-            data-hu="SEO-barát"
-          >
-            SEO-freundlich
-          </h3>
-
-          <p
-            data-de="Optimierte Grundlagen für bessere Auffindbarkeit"
-            data-hu="Optimalizált alapok a jobb kereshetőségért"
-          >
-            Optimierte Grundlagen für bessere Auffindbarkeit
-          </p>
-        </div>
-
-
-        <div class="feature-card">
-          <div class="icon">⚡</div>
-
-          <h3
-            data-de="Schnell & zuverlässig"
-            data-hu="Gyors és megbízható"
-          >
-            Schnell & zuverlässig
-          </h3>
-
-          <p
-            data-de="Schnelle Ladezeiten und moderne Technik"
-            data-hu="Gyors betöltés és modern technológia"
-          >
-            Schnelle Ladezeiten und moderne Technik
-          </p>
-        </div>
-
-
-        <div class="feature-card">
-          <div class="icon">🤝</div>
-
-          <h3
-            data-de="Persönlicher Support"
-            data-hu="Személyes támogatás"
-          >
-            Persönlicher Support
-          </h3>
-
-          <p
-            data-de="Direkter Kontakt während des Projekts"
-            data-hu="Közvetlen kapcsolattartás a projekt során"
-          >
-            Direkter Kontakt während des Projekts
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       SERVICES
-  ========================= -->
-
-  <section class="services" id="leistungen">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="Unsere Leistungen"
-        data-hu="Szolgáltatásaink"
-      >
-        Unsere Leistungen
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-de="Alles, was Ihr Unternehmen für einen professionellen Online-Auftritt benötigt."
-        data-hu="Minden, amire vállalkozásának szüksége lehet a professzionális online megjelenéshez."
-      >
-        Alles, was Ihr Unternehmen für einen professionellen Online-Auftritt benötigt.
-      </p>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <h3
-            data-de="🌐 Unternehmenswebseiten"
-            data-hu="🌐 Céges weboldalak"
-          >
-            🌐 Unternehmenswebseiten
-          </h3>
-
-          <p
-            data-de="Professionelle Webseiten für Unternehmen, Selbstständige und lokale Betriebe."
-            data-hu="Professzionális weboldalak cégek, vállalkozók és helyi vállalkozások számára."
-          >
-            Professionelle Webseiten für Unternehmen, Selbstständige und lokale Betriebe.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-de="🎨 Modernes Webdesign"
-            data-hu="🎨 Modern webdesign"
-          >
-            🎨 Modernes Webdesign
-          </h3>
-
-          <p
-            data-de="Individuelle Gestaltung passend zu Ihrer Marke und Zielgruppe."
-            data-hu="Egyedi megjelenés az Ön márkájához és célcsoportjához igazítva."
-          >
-            Individuelle Gestaltung passend zu Ihrer Marke und Zielgruppe.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-de="📱 Responsive Design"
-            data-hu="📱 Reszponzív design"
-          >
-            📱 Responsive Design
-          </h3>
-
-          <p
-            data-de="Ihre Website funktioniert auf Smartphone, Tablet und Desktop."
-            data-hu="Weboldala telefonon, tableten és számítógépen is megfelelően működik."
-          >
-            Ihre Website funktioniert auf Smartphone, Tablet und Desktop.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-de="🔎 SEO-Grundoptimierung"
-            data-hu="🔎 Alap SEO-optimalizálás"
-          >
-            🔎 SEO-Grundoptimierung
-          </h3>
-
-          <p
-            data-de="Technische und inhaltliche Grundlagen für eine bessere Auffindbarkeit."
-            data-hu="Technikai és tartalmi alapok a jobb online megtalálhatóság érdekében."
-          >
-            Technische und inhaltliche Grundlagen für eine bessere Auffindbarkeit.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       PORTFOLIO
-  ========================= -->
-
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="Unsere Projekte"
-        data-hu="Projektjeink"
-      >
-        Unsere Projekte
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-de="Eine Auswahl von Webseiten und digitalen Projekten aus unserem Portfolio."
-        data-hu="Weboldalak és digitális projektek válogatása portfóliónkból."
-      >
-        Eine Auswahl von Webseiten und digitalen Projekten aus unserem Portfolio.
-      </p>
-
-
-      <div class="portfolio-grid">
-
-
-        <!-- PROJEKT 01 -->
-
-        <div class="portfolio-card">
-
-          <div class="portfolio-image">
-            <span>GLANZ 24</span>
-          </div>
-
-          <div class="portfolio-content">
-
-            <h3
-              data-de="Glanz 24 Reinigung"
-              data-hu="Glanz 24 Takarítás"
-            >
-              Glanz 24 Reinigung
-            </h3>
-
-            <p
-              data-de="Moderner Webauftritt für einen professionellen Reinigungsservice."
-              data-hu="Modern weboldal egy professzionális takarítási szolgáltatás számára."
-            >
-              Moderner Webauftritt für einen professionellen Reinigungsservice.
-            </p>
-
-            <span
-              class="portfolio-tags"
-              data-de="Business Website · Responsive · Service"
-              data-hu="Üzleti weboldal · Reszponzív · Szolgáltatás"
-            >
-              Business Website · Responsive · Service
-            </span>
-
-            <a
-              href="https://glanz-24-reinigung.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="portfolio-link"
-              data-de="Website ansehen →"
-              data-hu="Weboldal megtekintése →"
-            >
-              Website ansehen →
-            </a>
-
-          </div>
-        </div>
-
-
-        <!-- PROJEKT 02 -->
-
-        <div class="portfolio-card">
-
-          <div class="portfolio-image">
-            <span>LUMINA</span>
-          </div>
-
-          <div class="portfolio-content">
-
-            <h3
-              data-de="Lumina Glow Box"
-              data-hu="Lumina Glow Box"
-            >
-              Lumina Glow Box
-            </h3>
-
-            <p
-              data-de="Modernes Marken- und Produktkonzept mit hochwertiger digitaler Präsentation."
-              data-hu="Modern márka- és termékkoncepció igényes digitális megjelenéssel."
-            >
-              Modernes Marken- und Produktkonzept mit hochwertiger digitaler Präsentation.
-            </p>
-
-            <span
-              class="portfolio-tags"
-              data-de="Branding · Product · Landing Page"
-              data-hu="Márkaépítés · Termék · Landing oldal"
-            >
-              Branding · Product · Landing Page
-            </span>
-
-            <a
-              href="https://luminaglowbox-4egbnt7j5-andrearostas-projects.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="portfolio-link"
-              data-de="Website ansehen →"
-              data-hu="Weboldal megtekintése →"
-            >
-              Website ansehen →
-            </a>
-
-          </div>
-        </div>
-
-
-        <!-- PROJEKT 03 -->
-
-        <div class="portfolio-card">
-
-          <div class="portfolio-image">
-            <span>NEXORA PORTFOLIO</span>
-          </div>
-
-          <div class="portfolio-content">
-
-            <h3
-              data-de="Webdesign Portfolio"
-              data-hu="Webdesign portfólió"
-            >
-              Webdesign Portfolio
-            </h3>
-
-            <p
-              data-de="Persönliches Portfolio zur Präsentation von Webdesign-Projekten und digitalen Fähigkeiten."
-              data-hu="Személyes portfólió webdesign projektek és digitális készségek bemutatására."
-            >
-              Persönliches Portfolio zur Präsentation von Webdesign-Projekten und digitalen Fähigkeiten.
-            </p>
-
-            <span
-              class="portfolio-tags"
-              data-de="Portfolio · Webdesign · Responsive"
-              data-hu="Portfólió · Webdesign · Reszponzív"
-            >
-              Portfolio · Webdesign · Responsive
-            </span>
-
-            <a
-              href="https://portfolio-xi-puce-zx7x7pzx2r.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="portfolio-link"
-              data-de="Website ansehen →"
-              data-hu="Weboldal megtekintése →"
-            >
-              Website ansehen →
-            </a>
-
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section class="about">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="Über NEXORA Digital Studio"
-        data-hu="A NEXORA Digital Studio-ról"
-      >
-        Über NEXORA Digital Studio
-      </h2>
-
-      <div class="about-content">
-
-        <h3
-          data-de="Digitale Lösungen, die professionell aussehen und funktionieren."
-          data-hu="Digitális megoldások, amelyek professzionálisak és működnek."
-        >
-          Digitale Lösungen, die professionell aussehen und funktionieren.
-        </h3>
-
-        <p
-          data-de="NEXORA Digital Studio entwickelt moderne Webseiten für Selbstständige und Unternehmen. Unser Ziel ist ein professioneller Online-Auftritt, der Vertrauen schafft und Ihre Leistungen klar präsentiert."
-          data-hu="A NEXORA Digital Studio modern weboldalakat készít vállalkozók és cégek számára. Célunk egy professzionális online megjelenés, amely bizalmat épít és egyértelműen bemutatja szolgáltatásait."
-        >
-          NEXORA Digital Studio entwickelt moderne Webseiten für Selbstständige und Unternehmen. Unser Ziel ist ein professioneller Online-Auftritt, der Vertrauen schafft und Ihre Leistungen klar präsentiert.
-        </p>
-
-        <p
-          data-de="Vom ersten Konzept bis zur fertigen Website stehen wir Ihnen persönlich zur Seite."
-          data-hu="Az első koncepciótól a kész weboldalig személyesen támogatjuk Önt."
-        >
-          Vom ersten Konzept bis zur fertigen Website stehen wir Ihnen persönlich zur Seite.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       PROCESS
-  ========================= -->
-
-  <section class="process">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="So funktioniert es"
-        data-hu="Így dolgozunk"
-      >
-        So funktioniert es
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-de="Ein einfacher und transparenter Ablauf."
-        data-hu="Egyszerű és átlátható folyamat."
-      >
-        Ein einfacher und transparenter Ablauf.
-      </p>
-
-      <div class="process-grid">
-
-
-        <div class="process-step">
-
-          <div class="process-number">
-            1
-          </div>
-
-          <h3
-            data-de="Kontakt"
-            data-hu="Kapcsolat"
-          >
-            Kontakt
-          </h3>
-
-          <p
-            data-de="Sie erzählen uns von Ihrem Projekt."
-            data-hu="Elmondja nekünk, milyen weboldalra van szüksége."
-          >
-            Sie erzählen uns von Ihrem Projekt.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <div class="process-number">
-            2
-          </div>
-
-          <h3
-            data-de="Konzept"
-            data-hu="Koncepció"
-          >
-            Konzept
-          </h3>
-
-          <p
-            data-de="Wir planen Struktur, Design und Inhalte."
-            data-hu="Megtervezzük a struktúrát, dizájnt és tartalmat."
-          >
-            Wir planen Struktur, Design und Inhalte.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <div class="process-number">
-            3
-          </div>
-
-          <h3
-            data-de="Entwicklung"
-            data-hu="Fejlesztés"
-          >
-            Entwicklung
-          </h3>
-
-          <p
-            data-de="Ihre Website wird professionell umgesetzt."
-            data-hu="Professzionálisan elkészítjük weboldalát."
-          >
-            Ihre Website wird professionell umgesetzt.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <div class="process-number">
-            4
-          </div>
-
-          <h3
-            data-de="Veröffentlichung"
-            data-hu="Indítás"
-          >
-            Veröffentlichung
-          </h3>
-
-          <p
-            data-de="Ihre neue Website geht online."
-            data-hu="Új weboldala online elérhetővé válik."
-          >
-            Ihre neue Website geht online.
-          </p>
-
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       PRICING
-  ========================= -->
-
-  <section class="pricing" id="preise">
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-de="Unsere Pakete"
-        data-hu="Csomagjaink"
-      >
-        Unsere Pakete
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-de="Transparente Preise für professionelle Webseiten."
-        data-hu="Átlátható árak professzionális weboldalakhoz."
-      >
-        Transparente Preise für professionelle Webseiten.
-      </p>
-
-
-      <div class="pricing-grid">
-
-
-        <!-- BASIC -->
-
-        <div class="price-card">
-
-          <div class="badge">
-            BASIC
-          </div>
-
-          <div class="price">
-            99.000 Ft
-            <small>≈ 299 €</small>
-          </div>
-
-          <ul>
-
-            <li
-              data-de="Bis zu 5 Seiten"
-              data-hu="Akár 5 aloldal"
-            >
-              Bis zu 5 Seiten
-            </li>
-
-            <li
-              data-de="Responsives Design"
-              data-hu="Reszponzív design"
-            >
-              Responsives Design
-            </li>
-
-            <li
-              data-de="Kontaktbereich"
-              data-hu="Kapcsolati szekció"
-            >
-              Kontaktbereich
-            </li>
-
-            <li
-              data-de="SEO-Grundoptimierung"
-              data-hu="Alap SEO-optimalizálás"
-            >
-              SEO-Grundoptimierung
-            </li>
-
-          </ul>
-
-          <a
-            href="#kontakt"
-            class="btn-outline"
-            data-de="Angebot anfragen"
-            data-hu="Ajánlatot kérek"
-          >
-            Angebot anfragen
-          </a>
-
-        </div>
-
-
-        <!-- STANDARD -->
-
-        <div class="price-card popular">
-
-          <div class="badge">
-            STANDARD · BELIEBT
-          </div>
-
-          <div class="price">
-            159.000 Ft
-            <small>≈ 599 €</small>
-          </div>
-
-          <ul>
-
-            <li
-              data-de="Bis zu 10 Seiten"
-              data-hu="Akár 10 aloldal"
-            >
-              Bis zu 10 Seiten
-            </li>
-
-            <li
-              data-de="Alles aus BASIC"
-              data-hu="Minden a BASIC csomagból"
-            >
-              Alles aus BASIC
-            </li>
-
-            <li
-              data-de="Blog / News Bereich"
-              data-hu="Blog / Hírek szekció"
-            >
-              Blog / News Bereich
-            </li>
-
-            <li
-              data-de="Google Maps Integration"
-              data-hu="Google Térkép integráció"
-            >
-              Google Maps Integration
-            </li>
-
-            <li
-              data-de="1 Monat Support inklusive"
-              data-hu="1 hónap támogatás"
-            >
-              1 Monat Support inklusive
-            </li>
-
-          </ul>
-
-          <a
-            href="#kontakt"
-            class="btn-outline"
-            data-de="Angebot anfragen"
-            data-hu="Ajánlatot kérek"
-          >
-            Angebot anfragen
-          </a>
-
-        </div>
-
-
-        <!-- PREMIUM -->
-
-        <div class="price-card">
-
-          <div class="badge">
-            PREMIUM
-          </div>
-
-          <div class="price">
-            299.000 Ft
-            <small>≈ 999 €</small>
-          </div>
-
-          <ul>
-
-            <li
-              data-de="Individuelle Seitenstruktur"
-              data-hu="Egyedi oldalstruktúra"
-            >
-              Individuelle Seitenstruktur
-            </li>
-
-            <li
-              data-de="Erweiterte SEO"
-              data-hu="Bővített SEO"
-            >
-              Erweiterte SEO
-            </li>
-
-            <li
-              data-de="Online-Terminbuchung / Shop"
-              data-hu="Online időpontfoglalás / webshop"
-            >
-              Online-Terminbuchung / Shop
-            </li>
-
-            <li
-              data-de="Mehrsprachigkeit"
-              data-hu="Többnyelvűség"
-            >
-              Mehrsprachigkeit
-            </li>
-
-            <li
-              data-de="3 Monate Support"
-              data-hu="3 hónap támogatás"
-            >
-              3 Monate Support
-            </li>
-
-          </ul>
-
-          <a
-            href="#kontakt"
-            class="btn-outline"
-            data-de="Angebot anfragen"
-            data-hu="Ajánlatot kérek"
-          >
-            Angebot anfragen
-          </a>
-
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       TRUST
-  ========================= -->
-
-  <section class="trust">
-    <div class="container">
-
-      <div class="trust-grid">
-
-
-        <div>
-
-          <h4
-            data-de="⏱ Schnelle Umsetzung"
-            data-hu="⏱ Gyors megvalósítás"
-          >
-            ⏱ Schnelle Umsetzung
-          </h4>
-
-          <p
-            data-de="Je nach Projektumfang"
-            data-hu="A projekt terjedelmétől függően"
-          >
-            Je nach Projektumfang
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h4
-            data-de="€ Transparente Preise"
-            data-hu="€ Átlátható árak"
-          >
-            € Transparente Preise
-          </h4>
-
-          <p
-            data-de="Keine versteckten Kosten"
-            data-hu="Nincsenek rejtett költségek"
-          >
-            Keine versteckten Kosten
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h4
-            data-de="🤝 Persönlicher Kontakt"
-            data-hu="🤝 Személyes kapcsolat"
-          >
-            🤝 Persönlicher Kontakt
-          </h4>
-
-          <p
-            data-de="Direkte Kommunikation"
-            data-hu="Közvetlen kommunikáció"
-          >
-            Direkte Kommunikation
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h4
-            data-de="🌍 AT · CH · HU"
-            data-hu="🌍 AT · CH · HU"
-          >
-            🌍 AT · CH · HU
-          </h4>
-
-          <p
-            data-de="Für Kunden im deutsch- und ungarischsprachigen Raum"
-            data-hu="Német és magyar nyelvű ügyfelek számára"
-          >
-            Für Kunden im deutsch- und ungarischsprachigen Raum
-          </p>
-
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section class="cta-footer" id="kontakt">
-    <div class="container">
-
-      <h2
-        data-de="Bereit für Ihre neue Website?"
-        data-hu="Készen áll új weboldalára?"
-      >
-        Bereit für Ihre neue Website?
-      </h2>
-
-      <p
-        data-de="Erzählen Sie uns kurz von Ihrem Projekt. Wir besprechen Ihre Wünsche unverbindlich."
-        data-hu="Írjon néhány szót projektjéről. Kötelezettség nélkül megbeszéljük elképzeléseit."
-      >
-        Erzählen Sie uns kurz von Ihrem Projekt. Wir besprechen Ihre Wünsche unverbindlich.
-      </p>
-
-
-      <div class="contact-buttons">
-
-
-        <!-- WHATSAPP -->
-
-        <a
-          href="https://wa.me/4915224547269?text=Hallo%20NEXORA%20Digital%20Studio%2C%20ich%20interessiere%20mich%20für%20eine%20Website."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="cta-btn whatsapp-btn"
-          data-de="💬 Über WhatsApp schreiben"
-          data-hu="💬 Írás WhatsAppon"
-        >
-          💬 Über WhatsApp schreiben
-        </a>
-
-
-        <!-- SMS -->
-
-        <a
-          href="sms:+36705395146"
-          class="cta-btn sms-btn"
-          data-de="🇭🇺 SMS schreiben"
-          data-hu="🇭🇺 SMS küldése"
-        >
-          🇭🇺 SMS schreiben
-        </a>
-
-
-      </div>
-
-
-      <div
-        class="contact-note"
-        data-de="WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146"
-        data-hu="WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146"
-      >
-        WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-    <div class="container">
-
-      <p class="footer-brand">
-        NEXORA Digital Studio
-      </p>
-
-      <p
+        class="tagline"
         data-de="Wir gestalten Ihren digitalen Auftritt."
         data-hu="Megalkotjuk digitális megjelenését."
       >
         Wir gestalten Ihren digitalen Auftritt.
+      </div>
+
+    </div>
+
+
+    <div class="lang-switch">
+
+      <button
+        id="btn-de"
+        class="active"
+        onclick="setLang('de')"
+      >
+        DE
+      </button>
+
+      <button
+        id="btn-hu"
+        onclick="setLang('hu')"
+      >
+        HU
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="brand-tag">
+      NEXORA DIGITAL STUDIO
+    </div>
+
+    <h1
+      data-de="Ihre professionelle <span>Website.</span><br>Modern. Schnell. Erfolgsorientiert."
+      data-hu="Professzionális <span>weboldal.</span><br>Modern. Gyors. Hatékony."
+    >
+      Ihre professionelle <span>Website.</span><br>
+      Modern. Schnell. Erfolgsorientiert.
+    </h1>
+
+    <p
+      data-de="Wir erstellen moderne, responsive Webseiten für Selbstständige und Unternehmen – individuell gestaltet und passend zu Ihrer Marke."
+      data-hu="Modern, reszponzív weboldalakat készítünk vállalkozók és cégek számára – egyedi megjelenéssel és az Ön márkájához igazítva."
+    >
+      Wir erstellen moderne, responsive Webseiten für Selbstständige und Unternehmen – individuell gestaltet und passend zu Ihrer Marke.
+    </p>
+
+    <a
+      href="#kontakt"
+      class="cta-btn"
+      data-de="Kostenloses Angebot anfragen →"
+      data-hu="Ingyenes ajánlat kérése →"
+    >
+      Kostenloses Angebot anfragen →
+    </a>
+
+    <div
+      class="hero-note"
+      data-de="Österreich · Schweiz · Ungarn"
+      data-hu="Ausztria · Svájc · Magyarország"
+    >
+      Österreich · Schweiz · Ungarn
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     WHY NEXORA
+========================= -->
+
+<section class="features">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Warum NEXORA?"
+      data-hu="Miért a NEXORA?"
+    >
+      Warum NEXORA?
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Wir verbinden modernes Design mit einer klaren Benutzererfahrung."
+      data-hu="A modern dizájnt átlátható és felhasználóbarát megoldásokkal ötvözzük."
+    >
+      Wir verbinden modernes Design mit einer klaren Benutzererfahrung.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <div class="icon">🖥️</div>
+
+        <h3
+          data-de="Modernes Design"
+          data-hu="Modern design"
+        >
+          Modernes Design
+        </h3>
+
+        <p
+          data-de="Individuell und professionell"
+          data-hu="Egyedi és professzionális"
+        >
+          Individuell und professionell
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <div class="icon">📱</div>
+
+        <h3
+          data-de="Mobil optimiert"
+          data-hu="Mobilbarát"
+        >
+          Mobil optimiert
+        </h3>
+
+        <p
+          data-de="Perfekt auf Smartphone, Tablet und Desktop"
+          data-hu="Tökéletes telefonon, tableten és számítógépen"
+        >
+          Perfekt auf Smartphone, Tablet und Desktop
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <div class="icon">🔍</div>
+
+        <h3
+          data-de="SEO-freundlich"
+          data-hu="SEO-barát"
+        >
+          SEO-freundlich
+        </h3>
+
+        <p
+          data-de="Optimierte Grundlagen für bessere Auffindbarkeit"
+          data-hu="Optimalizált alapok a jobb kereshetőségért"
+        >
+          Optimierte Grundlagen für bessere Auffindbarkeit
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <div class="icon">⚡</div>
+
+        <h3
+          data-de="Schnell & zuverlässig"
+          data-hu="Gyors és megbízható"
+        >
+          Schnell & zuverlässig
+        </h3>
+
+        <p
+          data-de="Schnelle Ladezeiten und moderne Technik"
+          data-hu="Gyors betöltés és modern technológia"
+        >
+          Schnelle Ladezeiten und moderne Technik
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <div class="icon">🤝</div>
+
+        <h3
+          data-de="Persönlicher Support"
+          data-hu="Személyes támogatás"
+        >
+          Persönlicher Support
+        </h3>
+
+        <p
+          data-de="Direkter Kontakt während des Projekts"
+          data-hu="Közvetlen kapcsolattartás a projekt során"
+        >
+          Direkter Kontakt während des Projekts
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="leistungen">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Unsere Leistungen"
+      data-hu="Szolgáltatásaink"
+    >
+      Unsere Leistungen
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Alles, was Ihr Unternehmen für einen professionellen Online-Auftritt benötigt."
+      data-hu="Minden, amire vállalkozásának szüksége lehet a professzionális online megjelenéshez."
+    >
+      Alles, was Ihr Unternehmen für einen professionellen Online-Auftritt benötigt.
+    </p>
+
+    <div class="services-grid">
+
+
+      <div class="service-card">
+
+        <h3
+          data-de="🌐 Unternehmenswebseiten"
+          data-hu="🌐 Céges weboldalak"
+        >
+          🌐 Unternehmenswebseiten
+        </h3>
+
+        <p
+          data-de="Professionelle Webseiten für Unternehmen, Selbstständige und lokale Betriebe."
+          data-hu="Professzionális weboldalak cégek, vállalkozók és helyi vállalkozások számára."
+        >
+          Professionelle Webseiten für Unternehmen, Selbstständige und lokale Betriebe.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3
+          data-de="🎨 Modernes Webdesign"
+          data-hu="🎨 Modern webdesign"
+        >
+          🎨 Modernes Webdesign
+        </h3>
+
+        <p
+          data-de="Individuelle Gestaltung passend zu Ihrer Marke und Zielgruppe."
+          data-hu="Egyedi megjelenés az Ön márkájához és célcsoportjához igazítva."
+        >
+          Individuelle Gestaltung passend zu Ihrer Marke und Zielgruppe.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3
+          data-de="📱 Responsive Design"
+          data-hu="📱 Reszponzív design"
+        >
+          📱 Responsive Design
+        </h3>
+
+        <p
+          data-de="Ihre Website funktioniert auf Smartphone, Tablet und Desktop."
+          data-hu="Weboldala telefonon, tableten és számítógépen is megfelelően működik."
+        >
+          Ihre Website funktioniert auf Smartphone, Tablet und Desktop.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3
+          data-de="🔎 SEO-Grundoptimierung"
+          data-hu="🔎 Alap SEO-optimalizálás"
+        >
+          🔎 SEO-Grundoptimierung
+        </h3>
+
+        <p
+          data-de="Technische und inhaltliche Grundlagen für eine bessere Auffindbarkeit."
+          data-hu="Technikai és tartalmi alapok a jobb online megtalálhatóság érdekében."
+        >
+          Technische und inhaltliche Grundlagen für eine bessere Auffindbarkeit.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section class="portfolio" id="portfolio">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Unsere Projekte"
+      data-hu="Projektjeink"
+    >
+      Unsere Projekte
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Eine Auswahl von Webseiten und digitalen Projekten aus unserem Portfolio."
+      data-hu="Weboldalak és digitális projektek válogatása portfóliónkból."
+    >
+      Eine Auswahl von Webseiten und digitalen Projekten aus unserem Portfolio.
+    </p>
+
+
+    <div class="portfolio-grid">
+
+
+      <!-- PROJEKT 01 -->
+
+      <div class="portfolio-card">
+
+        <div class="portfolio-image">
+
+          <img
+            src="images/glanz24.jpg"
+            alt="Glanz 24 Reinigung Website"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+
+          <div
+            class="portfolio-placeholder"
+            style="display:none;"
+          >
+            GLANZ 24<br>
+            Reinigung
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-content">
+
+          <h3
+            data-de="Glanz 24 Reinigung"
+            data-hu="Glanz 24 Takarítás"
+          >
+            Glanz 24 Reinigung
+          </h3>
+
+          <p
+            data-de="Moderner Webauftritt für einen professionellen Reinigungsservice."
+            data-hu="Modern weboldal egy professzionális takarítási szolgáltatás számára."
+          >
+            Moderner Webauftritt für einen professionellen Reinigungsservice.
+          </p>
+
+          <span
+            class="portfolio-tags"
+            data-de="Business Website · Responsive · Service"
+            data-hu="Üzleti weboldal · Reszponzív · Szolgáltatás"
+          >
+            Business Website · Responsive · Service
+          </span>
+
+          <a
+            href="https://glanz-24-reinigung.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio-link"
+            data-de="Website ansehen →"
+            data-hu="Weboldal megtekintése →"
+          >
+            Website ansehen →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJEKT 02 -->
+
+      <div class="portfolio-card">
+
+        <div class="portfolio-image">
+
+          <img
+            src="images/lumina.jpg"
+            alt="Lumina Glow Box Website"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+
+          <div
+            class="portfolio-placeholder"
+            style="display:none;"
+          >
+            LUMINA<br>
+            GLOW BOX
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-content">
+
+          <h3
+            data-de="Lumina Glow Box"
+            data-hu="Lumina Glow Box"
+          >
+            Lumina Glow Box
+          </h3>
+
+          <p
+            data-de="Modernes Marken- und Produktkonzept mit hochwertiger digitaler Präsentation."
+            data-hu="Modern márka- és termékkoncepció igényes digitális megjelenéssel."
+          >
+            Modernes Marken- und Produktkonzept mit hochwertiger digitaler Präsentation.
+          </p>
+
+          <span
+            class="portfolio-tags"
+            data-de="Branding · Product · Landing Page"
+            data-hu="Márkaépítés · Termék · Landing oldal"
+          >
+            Branding · Product · Landing Page
+          </span>
+
+          <a
+            href="https://luminaglowbox-4egbnt7j5-andrearostas-projects.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio-link"
+            data-de="Website ansehen →"
+            data-hu="Weboldal megtekintése →"
+          >
+            Website ansehen →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROJEKT 03 -->
+
+      <div class="portfolio-card">
+
+        <div class="portfolio-image">
+
+          <img
+            src="images/portfolio.jpg"
+            alt="NEXORA Webdesign Portfolio"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          >
+
+          <div
+            class="portfolio-placeholder"
+            style="display:none;"
+          >
+            NEXORA<br>
+            PORTFOLIO
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-content">
+
+          <h3
+            data-de="Webdesign Portfolio"
+            data-hu="Webdesign portfólió"
+          >
+            Webdesign Portfolio
+          </h3>
+
+          <p
+            data-de="Persönliches Portfolio zur Präsentation von Webdesign-Projekten und digitalen Fähigkeiten."
+            data-hu="Személyes portfólió webdesign projektek és digitális készségek bemutatására."
+          >
+            Persönliches Portfolio zur Präsentation von Webdesign-Projekten und digitalen Fähigkeiten.
+          </p>
+
+          <span
+            class="portfolio-tags"
+            data-de="Portfolio · Webdesign · Responsive"
+            data-hu="Portfólió · Webdesign · Reszponzív"
+          >
+            Portfolio · Webdesign · Responsive
+          </span>
+
+          <a
+            href="https://portfolio-xi-puce-zx7x7pzx2r.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio-link"
+            data-de="Website ansehen →"
+            data-hu="Weboldal megtekintése →"
+          >
+            Website ansehen →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="reviews">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Was Kunden an NEXORA schätzen"
+      data-hu="Amit az ügyfelek értékelnek a NEXORA-ban"
+    >
+      Was Kunden an NEXORA schätzen
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Erfahrungen unserer Kunden"
+      data-hu="Ügyfeleink tapasztalatai"
+    >
+      Erfahrungen unserer Kunden
+    </p>
+
+
+    <div class="reviews-grid">
+
+
+      <!-- REVIEW 01 -->
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <div class="review-avatar">
+            E
+          </div>
+
+          <div>
+
+            <div class="review-name">
+              Esther H.
+            </div>
+
+            <div
+              class="review-label"
+              data-de="Kundin"
+              data-hu="Ügyfél"
+            >
+              Kundin
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+
+        <p
+          class="review-text"
+          data-de="„Die Website wirkt modern, übersichtlich und professionell. Besonders gut gefällt mir die klare Darstellung der Leistungen.“"
+          data-hu="„A weboldal modern, átlátható és professzionális. Különösen tetszik a szolgáltatások egyértelmű bemutatása.”"
+        >
+          „Die Website wirkt modern, übersichtlich und professionell. Besonders gut gefällt mir die klare Darstellung der Leistungen.“
+        </p>
+
+      </div>
+
+
+      <!-- REVIEW 02 -->
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <div class="review-avatar">
+            R
+          </div>
+
+          <div>
+
+            <div class="review-name">
+              Robin K.
+            </div>
+
+            <div
+              class="review-label"
+              data-de="Kunde"
+              data-hu="Ügyfél"
+            >
+              Kunde
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+
+        <p
+          class="review-text"
+          data-de="„Ein sauberer und moderner Auftritt, der die Marke professionell präsentiert. Die mobile Darstellung ist besonders wichtig.“"
+          data-hu="„Tiszta és modern megjelenés, amely professzionálisan mutatja be a márkát. A mobilos megjelenés különösen fontos.”"
+        >
+          „Ein sauberer und moderner Auftritt, der die Marke professionell präsentiert. Die mobile Darstellung ist besonders wichtig.“
+        </p>
+
+      </div>
+
+
+      <!-- REVIEW 03 -->
+
+      <div class="review-card">
+
+        <div class="review-top">
+
+          <div class="review-avatar">
+            J
+          </div>
+
+          <div>
+
+            <div class="review-name">
+              Jennifer S.
+            </div>
+
+            <div
+              class="review-label"
+              data-de="Kundin"
+              data-hu="Ügyfél"
+            >
+              Kundin
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+
+        <p
+          class="review-text"
+          data-de="„Die Kommunikation war klar und die Website wurde übersichtlich aufgebaut. Genau der professionelle Auftritt, den ein kleines Unternehmen braucht.“"
+          data-hu="„Az oldal átlátható felépítést és professzionális megjelenést kapott. Pontosan olyan online jelenlét, amire egy kisvállalkozásnak szüksége van.”"
+        >
+          „Die Kommunikation war klar und die Website wurde übersichtlich aufgebaut. Genau der professionelle Auftritt, den ein kleines Unternehmen braucht.“
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Über NEXORA Digital Studio"
+      data-hu="A NEXORA Digital Studio-ról"
+    >
+      Über NEXORA Digital Studio
+    </h2>
+
+    <div class="about-content">
+
+      <h3
+        data-de="Digitale Lösungen, die professionell aussehen und funktionieren."
+        data-hu="Digitális megoldások, amelyek professzionálisak és működnek."
+      >
+        Digitale Lösungen, die professionell aussehen und funktionieren.
+      </h3>
+
+      <p
+        data-de="NEXORA Digital Studio entwickelt moderne Webseiten für Selbstständige und Unternehmen. Unser Ziel ist ein professioneller Online-Auftritt, der Vertrauen schafft und Ihre Leistungen klar präsentiert."
+        data-hu="A NEXORA Digital Studio modern weboldalakat készít vállalkozók és cégek számára. Célunk egy professzionális online megjelenés, amely bizalmat épít és egyértelműen bemutatja szolgáltatásait."
+      >
+        NEXORA Digital Studio entwickelt moderne Webseiten für Selbstständige und Unternehmen. Unser Ziel ist ein professioneller Online-Auftritt, der Vertrauen schafft und Ihre Leistungen klar präsentiert.
       </p>
 
-      <p class="footer-contact">
-        WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146
+      <p
+        data-de="Vom ersten Konzept bis zur fertigen Website stehen wir Ihnen persönlich zur Seite."
+        data-hu="Az első koncepciótól a kész weboldalig személyesen támogatjuk Önt."
+      >
+        Vom ersten Konzept bis zur fertigen Website stehen wir Ihnen persönlich zur Seite.
       </p>
 
-      <div class="footer-links">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section class="process">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="So funktioniert es"
+      data-hu="Így dolgozunk"
+    >
+      So funktioniert es
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Ein einfacher und transparenter Ablauf."
+      data-hu="Egyszerű és átlátható folyamat."
+    >
+      Ein einfacher und transparenter Ablauf.
+    </p>
+
+
+    <div class="process-grid">
+
+
+      <div class="process-step">
+
+        <div class="process-number">
+          1
+        </div>
+
+        <h3
+          data-de="Kontakt"
+          data-hu="Kapcsolat"
+        >
+          Kontakt
+        </h3>
+
+        <p
+          data-de="Sie erzählen uns von Ihrem Projekt."
+          data-hu="Elmondja nekünk, milyen weboldalra van szüksége."
+        >
+          Sie erzählen uns von Ihrem Projekt.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="process-number">
+          2
+        </div>
+
+        <h3
+          data-de="Konzept"
+          data-hu="Koncepció"
+        >
+          Konzept
+        </h3>
+
+        <p
+          data-de="Wir planen Struktur, Design und Inhalte."
+          data-hu="Megtervezzük a struktúrát, dizájnt és tartalmat."
+        >
+          Wir planen Struktur, Design und Inhalte.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="process-number">
+          3
+        </div>
+
+        <h3
+          data-de="Entwicklung"
+          data-hu="Fejlesztés"
+        >
+          Entwicklung
+        </h3>
+
+        <p
+          data-de="Ihre Website wird professionell umgesetzt."
+          data-hu="Professzionálisan elkészítjük weboldalát."
+        >
+          Ihre Website wird professionell umgesetzt.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <div class="process-number">
+          4
+        </div>
+
+        <h3
+          data-de="Veröffentlichung"
+          data-hu="Indítás"
+        >
+          Veröffentlichung
+        </h3>
+
+        <p
+          data-de="Ihre neue Website geht online."
+          data-hu="Új weboldala online elérhetővé válik."
+        >
+          Ihre neue Website geht online.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+
+<section class="pricing" id="preise">
+
+  <div class="container">
+
+    <h2
+      class="section-title"
+      data-de="Unsere Pakete"
+      data-hu="Csomagjaink"
+    >
+      Unsere Pakete
+    </h2>
+
+    <p
+      class="section-subtitle"
+      data-de="Transparente Preise für professionelle Webseiten."
+      data-hu="Átlátható árak professzionális weboldalakhoz."
+    >
+      Transparente Preise für professionelle Webseiten.
+    </p>
+
+
+    <div class="pricing-grid">
+
+
+      <!-- BASIC -->
+
+      <div class="price-card">
+
+        <div class="badge">
+          BASIC
+        </div>
+
+        <div class="price">
+          99.000 Ft
+          <small>≈ 299 €</small>
+        </div>
+
+        <ul>
+
+          <li
+            data-de="Bis zu 5 Seiten"
+            data-hu="Akár 5 aloldal"
+          >
+            Bis zu 5 Seiten
+          </li>
+
+          <li
+            data-de="Responsives Design"
+            data-hu="Reszponzív design"
+          >
+            Responsives Design
+          </li>
+
+          <li
+            data-de="Kontaktbereich"
+            data-hu="Kapcsolati szekció"
+          >
+            Kontaktbereich
+          </li>
+
+          <li
+            data-de="SEO-Grundoptimierung"
+            data-hu="Alap SEO-optimalizálás"
+          >
+            SEO-Grundoptimierung
+          </li>
+
+        </ul>
 
         <a
-          href="/impressum"
-          data-de="Impressum"
-          data-hu="Impresszum"
+          href="#kontakt"
+          class="btn-outline"
+          data-de="Angebot anfragen"
+          data-hu="Ajánlatot kérek"
         >
-          Impressum
-        </a>
-
-        <a
-          href="/datenschutz"
-          data-de="Datenschutz"
-          data-hu="Adatvédelem"
-        >
-          Datenschutz
+          Angebot anfragen
         </a>
 
       </div>
 
-      <p>
-        © 2026 NEXORA Digital Studio · Österreich · Schweiz · Ungarn
-      </p>
+
+      <!-- STANDARD -->
+
+      <div class="price-card popular">
+
+        <div class="badge">
+          STANDARD · BELIEBT
+        </div>
+
+        <div class="price">
+          159.000 Ft
+          <small>≈ 599 €</small>
+        </div>
+
+        <ul>
+
+          <li
+            data-de="Bis zu 10 Seiten"
+            data-hu="Akár 10 aloldal"
+          >
+            Bis zu 10 Seiten
+          </li>
+
+          <li
+            data-de="Alles aus BASIC"
+            data-hu="Minden a BASIC csomagból"
+          >
+            Alles aus BASIC
+          </li>
+
+          <li
+            data-de="Blog / News Bereich"
+            data-hu="Blog / Hírek szekció"
+          >
+            Blog / News Bereich
+          </li>
+
+          <li
+            data-de="Google Maps Integration"
+            data-hu="Google Térkép integráció"
+          >
+            Google Maps Integration
+          </li>
+
+          <li
+            data-de="1 Monat Support inklusive"
+            data-hu="1 hónap támogatás"
+          >
+            1 Monat Support inklusive
+          </li>
+
+        </ul>
+
+        <a
+          href="#kontakt"
+          class="btn-outline"
+          data-de="Angebot anfragen"
+          data-hu="Ajánlatot kérek"
+        >
+          Angebot anfragen
+        </a>
+
+      </div>
+
+
+      <!-- PREMIUM -->
+
+      <div class="price-card">
+
+        <div class="badge">
+          PREMIUM
+        </div>
+
+        <div class="price">
+          299.000 Ft
+          <small>≈ 999 €</small>
+        </div>
+
+        <ul>
+
+          <li
+            data-de="Individuelle Seitenstruktur"
+            data-hu="Egyedi oldalstruktúra"
+          >
+            Individuelle Seitenstruktur
+          </li>
+
+          <li
+            data-de="Erweiterte SEO"
+            data-hu="Bővített SEO"
+          >
+            Erweiterte SEO
+          </li>
+
+          <li
+            data-de="Online-Terminbuchung / Shop"
+            data-hu="Online időpontfoglalás / webshop"
+          >
+            Online-Terminbuchung / Shop
+          </li>
+
+          <li
+            data-de="Mehrsprachigkeit"
+            data-hu="Többnyelvűség"
+          >
+            Mehrsprachigkeit
+          </li>
+
+          <li
+            data-de="3 Monate Support"
+            data-hu="3 hónap támogatás"
+          >
+            3 Monate Support
+          </li>
+
+        </ul>
+
+        <a
+          href="#kontakt"
+          class="btn-outline"
+          data-de="Angebot anfragen"
+          data-hu="Ajánlatot kérek"
+        >
+          Angebot anfragen
+        </a>
+
+      </div>
+
 
     </div>
-  </footer>
+
+  </div>
+
+</section>
 
 
-  <!-- =========================
-       LANGUAGE SCRIPT
-  ========================= -->
+<!-- =========================
+     TRUST
+========================= -->
 
-  <script>
-    function setLang(lang) {
-      document
-        .querySelectorAll("[data-de]")
-        .forEach(function (el) {
-          el.innerHTML = el.getAttribute("data-" + lang);
-        });
+<section class="trust">
 
-      document
-        .getElementById("btn-de")
-        .classList
-        .toggle("active", lang === "de");
+  <div class="container">
 
-      document
-        .getElementById("btn-hu")
-        .classList
-        .toggle("active", lang === "hu");
+    <div class="trust-grid">
 
-      document.documentElement.lang = lang;
-    }
-  </script>
+
+      <div>
+
+        <h4
+          data-de="⏱ Schnelle Umsetzung"
+          data-hu="⏱ Gyors megvalósítás"
+        >
+          ⏱ Schnelle Umsetzung
+        </h4>
+
+        <p
+          data-de="Je nach Projektumfang"
+          data-hu="A projekt terjedelmétől függően"
+        >
+          Je nach Projektumfang
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4
+          data-de="€ Transparente Preise"
+          data-hu="€ Átlátható árak"
+        >
+          € Transparente Preise
+        </h4>
+
+        <p
+          data-de="Keine versteckten Kosten"
+          data-hu="Nincsenek rejtett költségek"
+        >
+          Keine versteckten Kosten
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4
+          data-de="🤝 Persönlicher Kontakt"
+          data-hu="🤝 Személyes kapcsolat"
+        >
+          🤝 Persönlicher Kontakt
+        </h4>
+
+        <p
+          data-de="Direkte Kommunikation"
+          data-hu="Közvetlen kommunikáció"
+        >
+          Direkte Kommunikation
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          🌍 AT · CH · HU
+        </h4>
+
+        <p
+          data-de="Für Kunden im deutsch- und ungarischsprachigen Raum"
+          data-hu="Német és magyar nyelvű ügyfelek számára"
+        >
+          Für Kunden im deutsch- und ungarischsprachigen Raum
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="cta-footer" id="kontakt">
+
+  <div class="container">
+
+    <h2
+      data-de="Bereit für Ihre neue Website?"
+      data-hu="Készen áll új weboldalára?"
+    >
+      Bereit für Ihre neue Website?
+    </h2>
+
+    <p
+      data-de="Erzählen Sie uns kurz von Ihrem Projekt. Wir besprechen Ihre Wünsche unverbindlich."
+      data-hu="Írjon néhány szót projektjéről. Kötelezettség nélkül megbeszéljük elképzeléseit."
+    >
+      Erzählen Sie uns kurz von Ihrem Projekt. Wir besprechen Ihre Wünsche unverbindlich.
+    </p>
+
+
+    <div class="contact-buttons">
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="https://wa.me/4915224547269?text=Hallo%20NEXORA%20Digital%20Studio%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-btn whatsapp-btn"
+        data-de="💬 Über WhatsApp schreiben"
+        data-hu="💬 Írás WhatsAppon"
+      >
+        💬 Über WhatsApp schreiben
+      </a>
+
+
+      <!-- SMS -->
+
+      <a
+        href="sms:+36705395146"
+        class="cta-btn sms-btn"
+        data-de="🇭🇺 SMS schreiben"
+        data-hu="🇭🇺 SMS küldése"
+      >
+        🇭🇺 SMS schreiben
+      </a>
+
+
+    </div>
+
+
+    <div
+      class="contact-note"
+      data-de="WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146"
+      data-hu="WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146"
+    >
+      WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container">
+
+    <p class="footer-brand">
+      NEXORA Digital Studio
+    </p>
+
+    <p
+      data-de="Wir gestalten Ihren digitalen Auftritt."
+      data-hu="Megalkotjuk digitális megjelenését."
+    >
+      Wir gestalten Ihren digitalen Auftritt.
+    </p>
+
+    <p class="footer-contact">
+      WhatsApp: +49 1522 4547269 · SMS: +36 70 539 5146
+    </p>
+
+
+    <div class="footer-links">
+
+      <a
+        href="/impressum.html"
+        data-de="Impressum"
+        data-hu="Impresszum"
+      >
+        Impressum
+      </a>
+
+      <a
+        href="/datenschutz.html"
+        data-de="Datenschutz"
+        data-hu="Adatvédelem"
+      >
+        Datenschutz
+      </a>
+
+    </div>
+
+
+    <p>
+      © 2026 NEXORA Digital Studio · Österreich · Schweiz · Ungarn
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     LANGUAGE SCRIPT
+========================= -->
+
+<script>
+
+  function setLang(lang) {
+
+    document
+      .querySelectorAll("[data-de]")
+      .forEach(function (el) {
+
+        el.innerHTML =
+          el.getAttribute("data-" + lang);
+
+      });
+
+
+    document
+      .getElementById("btn-de")
+      .classList
+      .toggle("active", lang === "de");
+
+
+    document
+      .getElementById("btn-hu")
+      .classList
+      .toggle("active", lang === "hu");
+
+
+    document.documentElement.lang = lang;
+
+  }
+
+</script>
+
 
 </body>
 </html>

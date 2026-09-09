@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Impressum | NEXORA Digital Studio</title>
+
+  <meta
+    name="description"
+    content="Impressum von NEXORA Digital Studio."
+  >
+
+  <style>
+    :root {
+      --green-dark: #0d5b36;
+      --green: #1a8f52;
+      --green-light: #7ac142;
+      --grey: #f4f7f5;
+      --text: #1c2b22;
+      --white: #ffffff;
+      --border: #e2e8e4;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--grey);
+    }
+
+    header {
+      background: var(--green-dark);
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--green-light);
+    }
+
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    .lang-switch button.active {
+      background: white;
+      color: var(--green-dark);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .legal-card {
+      background: white;
+      padding: 45px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      color: var(--green-dark);
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      color: var(--green-dark);
+      font-size: 1.25rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .placeholder {
+      color: #b00020;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 11px 22px;
+      border-radius: 25px;
+      background: var(--green);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #68736d;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .legal-card {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      NEXORA <span>Digital Studio</span>
+    </div>
+
+    <div class="lang-switch">
+      <button id="btn-de" class="active" onclick="setLang('de')">
+        DE
+      </button>
+
+      <button id="btn-hu" onclick="setLang('hu')">
+        HU
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <div class="legal-card">
+
+    <h1
+      data-de="Impressum"
+      data-hu="Impresszum"
+    >
+      Impressum
+    </h1>
+
+    <h2
+      data-de="Angaben zum Betreiber"
+      data-hu="Az üzemeltető adatai"
+    >
+      Angaben zum Betreiber
+    </h2>
+
+    <p>
+      <strong>NEXORA Digital Studio</strong><br>
+      Andrea Rostas<br>
+      8600 Siófok<br>
+      Ungarn
+    </p>
+
+    <h2
+      data-de="Kontakt"
+      data-hu="Kapcsolat"
+    >
+      Kontakt
+    </h2>
+
+    <p>
+      WhatsApp: +49 1522 4547269<br>
+      SMS: +36 70 539 5146<br>
+      <!-- E-Mail: -->
+      <!-- <span class="placeholder">[E-MAIL-ADRESSE ERGÄNZEN]</span> -->
+    </p>
+
+    <h2
+      data-de="Unternehmensform"
+      data-hu="Vállalkozási forma"
+    >
+      Unternehmensform
+    </h2>
+
+    <p
+      data-de="Einzelunternehmen / selbstständige Tätigkeit"
+      data-hu="Egyéni vállalkozás / önálló vállalkozói tevékenység"
+    >
+      Einzelunternehmen / selbstständige Tätigkeit
+    </p>
+
+    <h2
+      data-de="Tätigkeit"
+      data-hu="Tevékenység"
+    >
+      Tätigkeit
+    </h2>
+
+    <p
+      data-de="Webdesign, Entwicklung und Erstellung moderner Webseiten sowie digitale Dienstleistungen."
+      data-hu="Webdesign, modern weboldalak fejlesztése és készítése, valamint digitális szolgáltatások."
+    >
+      Webdesign, Entwicklung und Erstellung moderner Webseiten sowie digitale Dienstleistungen.
+    </p>
+
+    <h2
+      data-de="Hosting"
+      data-hu="Tárhelyszolgáltató"
+    >
+      Hosting
+    </h2>
+
+    <p>
+      Vercel Inc.<br>
+      Hosting der Website über die Infrastruktur von Vercel.
+    </p>
+
+    <p>
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
+        Vercel
+      </a>
+    </p>
+
+    <h2
+      data-de="Hinweis"
+      data-hu="Megjegyzés"
+    >
+      Hinweis
+    </h2>
+
+    <p
+      data-de="Dieses Impressum ist als Vorlage erstellt und muss vor der Veröffentlichung mit den vollständigen und rechtlich erforderlichen Angaben ergänzt werden."
+      data-hu="Ez az impresszum sablonként készült, és közzététel előtt ki kell egészíteni a teljes és jogilag szükséges adatokkal."
+    >
+      Dieses Impressum ist als Vorlage erstellt und muss vor der Veröffentlichung mit den vollständigen und rechtlich erforderlichen Angaben ergänzt werden.
+    </p>
+
+    <a
+      href="/"
+      class="back"
+      data-de="← Zurück zur Website"
+      data-hu="← Vissza a weboldalra"
+    >
+      ← Zurück zur Website
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 NEXORA Digital Studio
+</footer>
+
+<script>
+  function setLang(lang) {
+
+    document
+      .querySelectorAll("[data-de]")
+      .forEach(function(el) {
+        el.innerHTML = el.getAttribute("data-" + lang);
+      });
+
+    document
+      .getElementById("btn-de")
+      .classList
+      .toggle("active", lang === "de");
+
+    document
+      .getElementById("btn-hu")
+      .classList
+      .toggle("active", lang === "hu");
+
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
